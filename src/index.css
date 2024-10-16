@@ -63,4 +63,8 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .bg-png {
+    @apply bg-[linear-gradient(45deg,_#1d1d1d_25%,_transparent_0),_linear-gradient(-45deg,_#1d1d1d_25%,_transparent_0),_linear-gradient(45deg,_transparent_75%,_#1d1d1d_0),_linear-gradient(-45deg,_transparent_75%,_#1d1d1d_0)] bg-custom-pos bg-[length:20px_20px];
+  }
 }

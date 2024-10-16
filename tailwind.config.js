@@ -51,6 +51,9 @@ export default {
           5: "hsl(var(--chart-5))",
         },
       },
+      backgroundPosition: {
+        'custom-pos': '0 0, 0 10px, 10px -10px, -10px 0',
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

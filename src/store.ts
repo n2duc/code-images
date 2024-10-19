@@ -8,7 +8,7 @@ interface StoreState {
   theme: string;
   darkMode: boolean;
   showBackground: boolean;
-  language: string;
+  name: string;
   autoDetectLanguage: boolean;
   fontSize: number;
   fontStyle: string;
@@ -18,11 +18,11 @@ interface StoreState {
 // Initial state values for the store
 const initialState: StoreState = {
   code: "",
-  title: "Untitled",
+  title: "Untitled-1",
   theme: "hyper",
   darkMode: true,
   showBackground: true,
-  language: "plaintext",
+  name: "plaintext",
   autoDetectLanguage: false,
   fontSize: 18,
   fontStyle: "jetBrainsMono",

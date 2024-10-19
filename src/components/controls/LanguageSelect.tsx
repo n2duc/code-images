@@ -4,14 +4,14 @@ import useStore from "@/store"
 import { MagicWandIcon } from "@radix-ui/react-icons"
 
 const LanguageSelect = () => {
-  const language = useStore(state => state.language);
+  const language = useStore(state => state.name);
   const autoDetectLanguage = useStore(state => state.autoDetectLanguage);
 
   const handleChange = (language: string) => {
     if (language === "auto-detect") {
-      useStore.setState({ autoDetectLanguage: true, language: "plaintext" })
+      useStore.setState({ autoDetectLanguage: true, name: "plaintext" })
     } else {
-      useStore.setState({ autoDetectLanguage: false, language })
+      useStore.setState({ autoDetectLanguage: false, name: language })
     }
   }
 

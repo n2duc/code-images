@@ -18,6 +18,7 @@ import {
 } from "@/components/controls";
 
 import { Resizable } from "re-resizable";
+import FormatCodeButton from "./components/controls/FormatCodeButton";
 
 const App = () => {
   const theme = useStore((state) => state.theme) as ThemeStyle;
@@ -62,7 +63,7 @@ const App = () => {
       >
         <div
           className={cn(
-            "overflow-hidden mb-2 transition-all ease-out rounded-xl",
+            "overflow-hidden mb-10 transition-all ease-out rounded-xl",
             showBackground ? themes[theme].background : "bg-png"
           )}
           style={{ padding }}
@@ -72,7 +73,7 @@ const App = () => {
         </div>
       </Resizable>
 
-      <Card className="fixed bottom-16 py-6 px-8 mx-6 bg-neutral-900/90 backdrop-blur">
+      <Card className="fixed bottom-5 py-6 px-8 mx-6 bg-neutral-900/90 backdrop-blur">
         <CardContent className="flex flex-wrap gap-6 p-0">
           <ThemeSelect />
           <LanguageSelect />
@@ -82,8 +83,9 @@ const App = () => {
           <BackgroundSwitch />
           <DarkModeSwitch />
           <div className="w-px bg-neutral-800" />
-          <div className="place-self-center">
+          <div className="place-self-center flex gap-2">
             <ExportOptions targetRef={editorRef} />
+            <FormatCodeButton />
           </div>
         </CardContent>
       </Card>

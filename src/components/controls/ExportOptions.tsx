@@ -97,7 +97,7 @@ const ExportOptions = ({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button>
+        <Button variant="destructive">
           <Share2Icon className="mr-2" />
           Export
         </Button>

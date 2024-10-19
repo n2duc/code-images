@@ -10,8 +10,7 @@ const CodeEditor = () => {
   const store = useStore();
 
   useEffect(() => {
-    const randomSnippet =
-      codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+    const randomSnippet = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
     useStore.setState(randomSnippet);
   }, []);
 
@@ -19,7 +18,7 @@ const CodeEditor = () => {
     if (store.autoDetectLanguage) {
       const { language } = flourite(store.code, { noUnknown: true });
       useStore.setState({
-        language: language.toLowerCase() || "plaintext",
+        name: language.toLowerCase() || "plaintext",
       });
     }
   }, [store.autoDetectLanguage, store.code]);
@@ -65,7 +64,7 @@ const CodeEditor = () => {
           value={store.code}
           onValueChange={(code) => useStore.setState({ code })}
           highlight={(code) =>
-            hljs.highlight(code, { language: store.language || "plaintext" })
+            hljs.highlight(code, { language: store.name || "plaintext" })
               .value
           }
           style={{
@@ -73,7 +72,7 @@ const CodeEditor = () => {
             fontSize: store.fontSize,
           }}
           textareaClassName="focus:outline-none"
-          onClick={(e) => (e.target as HTMLInputElement).select()}
+          // onClick={(e) => (e.target as HTMLInputElement).select()}
         />
       </div>
     </div>

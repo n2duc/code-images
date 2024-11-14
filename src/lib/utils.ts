@@ -1,6 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { Language } from "@/options";
+import * as prettierPluginEstree from "prettier/plugins/estree";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -56,6 +57,7 @@ export async function formatCode(code: string, language: Language["name"] | null
     parser: parser.name,
     plugins: [
       parserModule,
+      prettierPluginEstree,
       ...(["TypeScript", "JavaScript", "TSX"].includes(language)
         ? [(await import("prettier/parser-espree")).default]
         : []),

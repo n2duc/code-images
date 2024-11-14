@@ -203,5 +203,21 @@ export const codeSnippets: Language[] = [
     name: "rust",
     code: 'fn main() {\n  let mut count = 0;\n  loop {\n    println!("Count: {}", count);\n    count += 1;\n    if count > 5 {\n      break;\n    }\n  }\n}',
   },
+  {
+    name: "html",
+    code: '<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1.0">\n  <title>Document</title>\n</head>\n<body>\n  <h1>Hello, World!</h1>\n</body>\n</html>',
+  },
+  {
+    name: "css",
+    code: 'body {\n  font-family: Arial, sans-serif;\n  background-color: #f0f0f0;\n}\nh1 {\n  color: #333;\n  text-align: center;\n}',
+  },
+  {
+    name: "scss",
+    code: '$primary-color: #333;\n$secondary-color: #666;\n\nbody {\n  font-family: Arial, sans-serif;\n  background-color: #f0f0f0;\n}\nh1 {\n  color: $primary-color;\n  text-align: center;\n}',
+  },
+  {
+    name: "markdown",
+    code: "# Markdown\n\n## Subtitle\n\n- List item 1\n- List item 2\n\n```python\nprint('Hello, World!')\n```",
+  }
 ]
 export type CodeSnippetStyle = keyof typeof codeSnippets;
